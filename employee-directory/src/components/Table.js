@@ -1,21 +1,20 @@
 import React, { useState, useEffect } from "react";
 
-const Table = ({ employees }) => {
-  const [sortedEmployees, updateSortedEmployees] = useState([]);
+const Table = ({ users }) => {
+  const [sortedUsers, updateSortedUsers] = useState([]);
 
-  useEffect(() => updateSortedEmployees(employees), [employees]);
+  useEffect(() => updateSortedUsers(users), [users]);
 
   return (
     <div>
       <table className="table">
-        <thead>
+        <thead className="thead-dark">
           <tr>
-            <th scope="col">title</th>
             <th
               scope="col"
               onClick={() => {
-                const employeeCopy = [...employees];
-                const updateSort = employeesCopy.sort((a, b) => {
+                const usersCopy = [...users];
+                const updateSort = usersCopy.sort((a, b) => {
                   const nameA = a.name.first;
                   const nameB = b.name.first;
 
@@ -29,48 +28,42 @@ const Table = ({ employees }) => {
                   return 0;
                 });
 
-                updateSortedEmployees(updateSort);
+                updateSortedUsers(updateSort);
               }}
             >
-              First
+              Name
             </th>
-            <th scope="col">Last</th>
-            <th scope="col">gender</th>
-            <th scope="col">email</th>
-            <th scope="col">phone</th>
-            <th scope="col">cell</th>
-            <th scope="col">city</th>
-            <th scope="col">state</th>
-            <th scope="col">country</th>
-            <th scope="col">postcode</th>
-            <th scope="col">picture</th>
+            <th scope="col">Surname</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Email</th>
+            <th scope="col">Cell</th>
+            <th scope="col">City</th>
+            <th scope="col">State</th>
+            <th scope="col">Postcode</th>
+            <th scope="col">Picture</th>
           </tr>
         </thead>
         <tbody>
-          {sortedEmployees.map(
+          {sortedUsers.map(
             ({
-              location: { city, state, country, postcode },
+              location: { city, state, postcode },
               picture: { thumbnail },
               cell,
-              phone,
               gender,
               email,
-              name: { first, last, title }
+              name: { first, last }
             }) => (
               <tr key={email}>
-                <td>{title}</td>
                 <th>{first}</th>
                 <td>{last}</td>
                 <td>{gender}</td>
                 <td>{email}</td>
-                <td>{phone}</td>
                 <td>{cell}</td>
                 <td>{city}</td>
                 <td>{state}</td>
-                <td>{country}</td>
                 <td>{postcode}</td>
                 <td>
-                  <img src={thumbnail} />
+                  <img src={thumbnail} alt="employee" />
                 </td>
 
                 <td></td>

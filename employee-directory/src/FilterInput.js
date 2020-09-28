@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from "react";
 
-const Filter = ({ employees, updateEmployees }) => {
+const FilterInput = ({ users, updateUsers }) => {
   const [inputValue, updateInput] = useState("");
 
   useEffect(() => {
-    const filteredEmployees =
+    const filteredUsers =
       inputValue === ""
-        ? employees
-        : employees.filter(
+        ? users
+        : users.filter(
             ({ name: { first } }) =>
               first.toLowerCase().indexOf(inputValue.toLowerCase()) >= 0
           );
 
-    updateEmployees(filteredEmployees);
-  }, [inputValue, employees]);
+    updateUsers(filteredUsers);
+  }, [inputValue, users]);
 
   return (
     <input value={inputValue} onChange={e => updateInput(e.target.value)} />

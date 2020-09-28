@@ -1,26 +1,29 @@
 import React, { useEffect, useState } from "react";
-import Filter from "./Filter";
+import FilterInput from "./FilterInput";
 import Table from "./components/Table";
-import { getEmployees } from "./utils/API";
+import { getUsers } from "./utils/API";
+import "./Styles/App.css";
 
 function App() {
-  const [initialEmployees, updateAvailableEmployees] = useState([]);
-  const [employeesToRender, updateEmployeesToRender] = useState([]);
+  const [initialUsers, updateAvailableUsers] = useState([]);
+  const [usersToRender, updateUsersToRender] = useState([]);
 
   useEffect(() => {
-    getEmployees().then(({ data: { results } }) => updateAvailableEmployees(results));
+    getUsers().then(({ data: { results } }) => updateAvailableUsers(results));
   }, []);
 
   return (
     <div className="App">
       <h1>Employee Directory</h1>
       <p>
-        Please enter the employees last name to narrow down your search results
+        To filter by first name, please begin your search in the user input
+        below
       </p>
-      <FilterInput employees={initialEmployees} updateEmployees={updateEmployeesToRender} />
-      <Table users={employeesToRender} />
+      <FilterInput users={initialUsers} updateUsers={updateUsersToRender} />
+      <Table users={usersToRender} />
     </div>
   );
 }
 
 export default App;
+//test
