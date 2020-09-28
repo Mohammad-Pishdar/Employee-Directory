@@ -6,17 +6,16 @@ const Table = ({ users }) => {
   useEffect(() => updateSortedUsers(users), [users]);
 
   return (
-    <div>
+    <div className="w-100">
       <table className="table">
         <thead className="thead-dark">
           <tr>
-            <th
-              scope="col"
-              onClick={() => {
+            <th scope="col">Name</th>
+            <th style={{cursor: "pointer"}} scope="col" onClick={() => {
                 const usersCopy = [...users];
                 const updateSort = usersCopy.sort((a, b) => {
-                  const nameA = a.name.first;
-                  const nameB = b.name.first;
+                  const nameA = a.name.last;
+                  const nameB = b.name.last;
 
                   if (nameA < nameB) {
                     return -1;
@@ -29,14 +28,10 @@ const Table = ({ users }) => {
                 });
 
                 updateSortedUsers(updateSort);
-              }}
-            >
-              Name
-            </th>
-            <th scope="col">Surname</th>
+              }}>Surname (click to order alphabeticaly)</th>
             <th scope="col">Gender</th>
             <th scope="col">Email</th>
-            <th scope="col">Cell</th>
+            <th scope="col">Mobile</th>
             <th scope="col">City</th>
             <th scope="col">State</th>
             <th scope="col">Postcode</th>
@@ -54,8 +49,8 @@ const Table = ({ users }) => {
               name: { first, last }
             }) => (
               <tr key={email}>
-                <th>{first}</th>
-                <td>{last}</td>
+                <td>{first}</td>
+                <th>{last}</th>
                 <td>{gender}</td>
                 <td>{email}</td>
                 <td>{cell}</td>
@@ -65,8 +60,6 @@ const Table = ({ users }) => {
                 <td>
                   <img src={thumbnail} alt="employee" />
                 </td>
-
-                <td></td>
               </tr>
             )
           )}

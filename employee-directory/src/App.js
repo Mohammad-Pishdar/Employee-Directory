@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import FilterInput from "./FilterInput";
 import Table from "./components/Table";
-import { getUsers } from "./utils/API";
+import { getEmployees } from "./utils/API";
 import "./Styles/App.css";
 
 function App() {
@@ -9,17 +9,19 @@ function App() {
   const [usersToRender, updateUsersToRender] = useState([]);
 
   useEffect(() => {
-    getUsers().then(({ data: { results } }) => updateAvailableUsers(results));
+    getEmployees().then(({ data: { results } }) => updateAvailableUsers(results));
   }, []);
 
   return (
     <div className="App">
+      <div className="bg-primary">
       <h1>Employee Directory</h1>
       <p>
-        To filter by first name, please begin your search in the user input
+        To filter by surname, please begin your search in the user input
         below
       </p>
       <FilterInput users={initialUsers} updateUsers={updateUsersToRender} />
+      </div>
       <Table users={usersToRender} />
     </div>
   );
