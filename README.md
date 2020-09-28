@@ -1,4 +1,4 @@
-# Employee Directory
+# Employee
 
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/Mohammad-Pishdar/employee_summary_template_engine/blob/master/LICENSE)
 
