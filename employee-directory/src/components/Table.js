@@ -7,7 +7,7 @@ const Table = ({ users }) => {
 
   return (
     <div className="w-100">
-      <table className="table">
+      <table className="table table-striped">
         <thead className="thead-dark">
           <tr>
             <th scope="col">Name</th>
