@@ -20,11 +20,11 @@
   
   Here is a screenshot of the app:
   
-  ![alt text](https://github.com/Mohammad-Pishdar/Online-Offline-Budget-Trackers/blob/master/public/screenshots/Screenshot%202020-09-21%20153157.jpg)
+  ![alt text](https://raw.githubusercontent.com/Mohammad-Pishdar/Employee-Directory/master/app.jpg)
 
   ## Usage
 
-  The user will be able to add expenses and deposits to their budget with or without a connection. When entering transactions offline, they should populate the total when brought back online.
+  The user will be able to view the entire employee directory at a glance and have qucick access to their information which is stored as a table. The user can then order the column of employee surnames and can also filters out employees based on their family names by typing it into the provided input box.
 
   ## License
 
