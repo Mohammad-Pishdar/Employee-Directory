@@ -16,11 +16,11 @@
 
   ## Installation
 
-  This app is hosted on heroku using mLab MongoDB Add-on which acts as an online host for its Mongo database. You can access the app by clicking [https://pacific-meadow-17364.herokuapp.com/](https://pacific-meadow-17364.herokuapp.com/).
+  This app is hosted on Github pages. You can access the app by clicking [https://mohammad-pishdar.github.io/Employee-Directory/](https://mohammad-pishdar.github.io/Employee-Directory/).
   
   Here is a screenshot of the app:
   
-  ![alt text](https://github.com/Mohammad-Pishdar/Online-Offline-Budget-Trackers/blob/master/public/screenshots/Screenshot%202020-09-21%20153157.jpg)
+  ![alt text](https://raw.githubusercontent.com/Mohammad-Pishdar/Employee-Directory/master/app.jpg)
 
   ## Usage
 
